@@ -1,6 +1,6 @@
 import { HomeSaga } from "../../common/enums/sagas/home"
 
-export const setLatestMovieList = () => {
+export const setPopularMovieList = () => {
     return {
         type: HomeSaga.SetPopularMovieListSaga
     }

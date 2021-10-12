@@ -11,7 +11,7 @@ export const homeReducer = (state = INITIAL_STATE, action: any) => {
   switch (type) {
     case HomeActions.SetPopularMovieList:
       const { movieList } = action;
-      return { ...state, popularMovieList: movieList };
+      return {...state,popularMovieList: movieList}
     default:
         return state;
   }

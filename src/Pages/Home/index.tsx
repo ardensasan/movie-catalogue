@@ -1,5 +1,11 @@
+import { useDispatch } from "react-redux";
+import { setPopularMovieList } from "../../state/actions/home";
+import PopularMovies from "./PopularMovies";
+
 const Home = () => {
-    return <h1>aaa</h1>;
+    const dispatch = useDispatch();
+    dispatch(setPopularMovieList())
+    return <PopularMovies></PopularMovies>
 }
 
 export default Home;
