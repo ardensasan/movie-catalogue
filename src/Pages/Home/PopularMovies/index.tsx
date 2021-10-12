@@ -1,14 +1,20 @@
+import { FC, Fragment } from "react";
 import { useSelector } from "react-redux";
+import { State } from "./types";
 
-const PopularMovies = () => {
+const PopularMovies: FC<{}> = () => {
   const popularMovieList = useSelector(
-    (state: any) => state.home.popularMovieList
+    (state: State) => state.home.popularMovieList
   );
-  return popularMovieList.length
-    ? popularMovieList.map(() => {
-        return "okay";
-      })
-    : null;
+  if (!popularMovieList.length) return null;
+  return (
+    <Fragment>
+      <h1>POPULAR MOVIES</h1>
+      {popularMovieList.map((movie) => {
+        return movie.original_title;
+      })}
+    </Fragment>
+  );
 };
 
 export default PopularMovies;

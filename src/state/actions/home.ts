@@ -5,3 +5,15 @@ export const setPopularMovieList = () => {
         type: HomeSaga.SetPopularMovieListSaga
     }
 }
+
+export const setTopRatedMovieList = () =>{
+    return {
+        type: HomeSaga.SetTopRatedMovieListSaga
+    }
+}
+
+export const setUpcomingMovieList = () =>{
+    return {
+        type: HomeSaga.SetUpcomingMovieListSaga
+    }
+}
