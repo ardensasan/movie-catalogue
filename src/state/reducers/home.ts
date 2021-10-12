@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   upcomingMovieList: [],
 };
 
-export const homeReducer = (state = INITIAL_STATE, action: any) => {
+const homeReducer = (state = INITIAL_STATE, action: any) => {
   const { type } = action;
   switch (type) {
     case HomeActions.SetPopularMovieList:
@@ -18,8 +18,9 @@ export const homeReducer = (state = INITIAL_STATE, action: any) => {
     case HomeActions.SetUpcomingMovieList:
       const { upcomingMovieList } = action;
       return { ...state, upcomingMovieList };
-
     default:
       return state;
   }
 };
+
+export default homeReducer;

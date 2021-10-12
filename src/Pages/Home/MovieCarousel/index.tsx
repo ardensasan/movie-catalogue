@@ -38,14 +38,19 @@ const MovieCarousel: FC<Props> = ({ type }) => {
   return (
     <Fragment>
       <h1>{type}</h1>
-      <Carousel responsive={responsive}>
+      <Carousel
+        responsive={responsive}
+        showDots={true}
+        infinite={true}
+        keyBoardControl={true}
+      >
         {movieList?.map((movie: any) => {
           return (
             <div key={movie.id}>
               <img
                 src={`${MovieDefaults.PosterURL}${movie.poster_path}`}
                 alt={movie.original_title}
-              ></img>
+              />
             </div>
           );
         })}

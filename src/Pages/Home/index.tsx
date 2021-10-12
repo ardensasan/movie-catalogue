@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { useDispatch } from "react-redux";
+import NavBar from "../../components/NavBar";
 import {
   setPopularMovieList,
   setTopRatedMovieList,
@@ -14,6 +15,7 @@ const Home = () => {
   dispatch(setUpcomingMovieList());
   return (
     <Fragment>
+      <NavBar/>
       <MovieCarousel type="Popular"/>
       <MovieCarousel type="Top Rated"/>
       <MovieCarousel type="Upcoming"/>
