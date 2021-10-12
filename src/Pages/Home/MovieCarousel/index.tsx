@@ -1,13 +1,23 @@
-import { Fragment } from "react";
+import { FC, Fragment } from "react";
 import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import { useSelector } from "react-redux";
 import { MovieDefaults } from "../../../common/defaults/movie";
-import { State } from "./types";
+import { Props } from "./types";
 
-const UpcomingMovies = () => {
-  const upcomingMovieList = useSelector(
-    (state: State) => state.home.upcomingMovieList
-  );
+const MovieCarousel: FC<Props> = ({ type }) => {
+  const movieList = useSelector((state: any) => {
+    if (type === "Popular") {
+      return state.home.popularMovieList;
+    } else if (type === "Top Rated") {
+      return state.home.topRatedMovieList;
+    } else if (type === "Upcoming") {
+      return state.home.upcomingMovieList;
+    } else {
+      return [];
+    }
+  });
+
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -25,12 +35,11 @@ const UpcomingMovies = () => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
-  if (!upcomingMovieList.length) return null;
   return (
     <Fragment>
-      <h1>Upcoming</h1>
+      <h1>{type}</h1>
       <Carousel responsive={responsive}>
-        {upcomingMovieList.map((movie) => {
+        {movieList?.map((movie: any) => {
           return (
             <div key={movie.id}>
               <img
@@ -45,4 +54,4 @@ const UpcomingMovies = () => {
   );
 };
 
-export default UpcomingMovies;
+export default MovieCarousel;

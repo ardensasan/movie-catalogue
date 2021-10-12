@@ -5,9 +5,7 @@ import {
   setTopRatedMovieList,
   setUpcomingMovieList,
 } from "../../state/actions/home";
-import PopularMovies from "./PopularMovies";
-import TopRatedMovies from "./TopRatedMovies";
-import UpcomingMovies from "./UpcomingMovies";
+import MovieCarousel from "./MovieCarousel";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,9 +14,9 @@ const Home = () => {
   dispatch(setUpcomingMovieList());
   return (
     <Fragment>
-      <PopularMovies />
-      <TopRatedMovies />
-      <UpcomingMovies />
+      <MovieCarousel type="Popular"/>
+      <MovieCarousel type="Top Rated"/>
+      <MovieCarousel type="Upcoming"/>
     </Fragment>
   );
 };
