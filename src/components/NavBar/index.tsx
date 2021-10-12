@@ -8,36 +8,27 @@ import {
   OutlinedInput,
   Toolbar,
 } from "@mui/material";
-import { ChangeEvent, FC, useState } from "react";
+import { ChangeEvent, FC } from "react";
 import { useHistory } from "react-router-dom";
 import { Path } from "../../common/enums/path";
 
 const NavBar: FC<{}> = () => {
   const history = useHistory();
 
-  const handleClickMovies = () => {
-    history.push(Path.Movies)
-  };
-
-  const handleSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {
-  };
+  const handleSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {};
 
   const handleSearchOnClick = () => {};
 
   const handleSearchKeyDown = (event: any) => {};
 
-  const handleClickHome = () =>{
-      history.push(Path.Home)
-  }
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton color="inherit" onClick={handleClickHome}>
+          <IconButton color="inherit" onClick={() => history.push(Path.Home)}>
             <Home />
           </IconButton>
-          <IconButton color="inherit" onClick={handleClickMovies}>
+          <IconButton color="inherit" onClick={() => history.push(Path.Movies)}>
             <LocalMovies />
           </IconButton>
           <div>
