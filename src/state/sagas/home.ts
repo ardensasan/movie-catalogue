@@ -6,14 +6,11 @@ import {
   fetchUpcomingMovieList,
 } from "../../utils/home";
 import { HomeActions } from "../../common/enums/actions/home";
+//worker functions
 function* getPopularMovieList(): any {
   const response = yield call(fetchPopularMovieList);
   const { results: popularMovieList } = response.data;
   yield put({ type: HomeActions.SetPopularMovieList, popularMovieList });
-}
-
-function* watchSetPopularMovieListSaga() {
-  yield takeLatest(HomeSaga.SetPopularMovieListSaga, getPopularMovieList);
 }
 
 function* getTopRatedMovieListSaga(): any {
@@ -22,18 +19,21 @@ function* getTopRatedMovieListSaga(): any {
   yield put({ type: HomeActions.SetTopRatedMovieList, topRatedMovieList });
 }
 
-function* watchSetTopRatedMovieListSaga() {
-  yield takeLatest(HomeSaga.SetTopRatedMovieListSaga, getTopRatedMovieListSaga);
-}
-
 function* getUpcomingMovieListSaga(): any {
   const response = yield call(fetchUpcomingMovieList);
   const { results: upcomingMovieList } = response.data;
   yield put({ type: HomeActions.SetUpcomingMovieList, upcomingMovieList });
 }
 
+//watcher function
 function* watchUpcomingMovieListSaga() {
   yield takeLatest(HomeSaga.SetUpcomingMovieListSaga, getUpcomingMovieListSaga);
+}
+function* watchSetTopRatedMovieListSaga() {
+  yield takeLatest(HomeSaga.SetTopRatedMovieListSaga, getTopRatedMovieListSaga);
+}
+function* watchSetPopularMovieListSaga() {
+  yield takeLatest(HomeSaga.SetPopularMovieListSaga, getPopularMovieList);
 }
 
 export default function* rootSaga() {
