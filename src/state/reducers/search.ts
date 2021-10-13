@@ -5,28 +5,26 @@ const INITIAL_STATE = {
   genreID: undefined,
   page: 1,
   movieList: [],
+  totalPages: 1,
 };
 const searchReducer = (state = INITIAL_STATE, action: any) => {
-  const { type } = action;
+  const { type, ...rest } = action;
+
   switch (type) {
     case SearchActions.SearchByLanguage:
-      const { movieList: lMovieList, page: lPage, language } = action;
       return {
         ...state,
-        movieList: lMovieList,
-        lPage,
-        language,
+        ...rest,
         genreID: undefined,
       };
     case SearchActions.SearchByGenre:
-      const { movieList: gMovieList, page: gPage, genreID } = action;
       return {
         ...state,
-        movieList: gMovieList,
-        page: gPage,
-        genreID,
+        ...rest,
         language: undefined,
       };
+    case SearchActions.SearchChangePage:
+      return { ...state, page:action.page };
     default:
       return state;
   }
