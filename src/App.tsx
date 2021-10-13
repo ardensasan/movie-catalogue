@@ -12,15 +12,20 @@ import { Path } from "./common/enums/path";
 import { watchSetMovieListSaga } from "./state/sagas/movies";
 import { watchSetMovieDetailsSaga } from "./state/sagas/movie";
 import Search from "./Pages/Search";
-import { wachSearchByLanguageSaga, watchSearchByGenreSaga } from "./state/sagas/search";
+import {
+  watchSearchByLanguageSaga,
+  watchSearchByGenreSaga,
+  watchSearchByQuerySaga,
+} from "./state/sagas/search";
 const App = () => {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(reducer, applyMiddleware(sagaMiddleware));
   sagaMiddleware.run(rootSaga);
   sagaMiddleware.run(watchSetMovieListSaga);
   sagaMiddleware.run(watchSetMovieDetailsSaga);
-  sagaMiddleware.run(wachSearchByLanguageSaga)
-  sagaMiddleware.run(watchSearchByGenreSaga)
+  sagaMiddleware.run(watchSearchByLanguageSaga);
+  sagaMiddleware.run(watchSearchByGenreSaga);
+  sagaMiddleware.run(watchSearchByQuerySaga)
   return (
     <Provider store={store}>
       <div className="App">

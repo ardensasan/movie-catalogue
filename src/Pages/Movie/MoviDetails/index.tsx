@@ -6,7 +6,6 @@ import { Path } from "../../../common/enums/path";
 
 const MovieDetails = () => {
   const movieDetails = useSelector((state: any) => state.movie.movieDetails);
-  console.log(movieDetails);
   if (!movieDetails) {
     return null;
   }

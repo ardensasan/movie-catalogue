@@ -1,10 +1,6 @@
-import { SearchActions } from "../../common/enums/actions/search";
 import { SearchSaga } from "../../common/enums/sagas/search";
 
-export const searchByLanguage = (
-  language: string,
-  page: string
-) => {
+export const searchByLanguage = (language: string, page: number) => {
   return {
     type: SearchSaga.SearchByLanguageSaga,
     language,
@@ -12,7 +8,7 @@ export const searchByLanguage = (
   };
 };
 
-export const searchByGenre = (genreID: string, page: string) => {
+export const searchByGenre = (genreID: string, page: number) => {
   return {
     type: SearchSaga.SearchByGenreSaga,
     genreID,
@@ -20,9 +16,10 @@ export const searchByGenre = (genreID: string, page: string) => {
   };
 };
 
-export const searchChangePage = (page:number) => {
+export const searchByQuery = (query: string, page: number) => {
   return {
-    type: SearchActions.SearchChangePage,
-    page
-  }
-}
+    type: SearchSaga.SearchByQuerySaga,
+    query,
+    page,
+  };
+};

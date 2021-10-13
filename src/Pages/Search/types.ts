@@ -9,5 +9,6 @@ interface Match {
 interface Params {
   genreID?: string;
   language?: string;
+  query?:string;
   page: string;
 }

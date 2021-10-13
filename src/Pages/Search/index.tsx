@@ -1,6 +1,11 @@
-import { FC } from "react";
+import { FC, Fragment } from "react";
 import { useDispatch } from "react-redux";
-import { searchByGenre, searchByLanguage } from "../../state/actions/search";
+import NavBar from "../../components/NavBar";
+import {
+  searchByGenre,
+  searchByLanguage,
+  searchByQuery,
+} from "../../state/actions/search";
 import SearchResults from "./SearchResults";
 import { Props } from "./types";
 
@@ -10,13 +15,21 @@ const Search: FC<Props> = (props: Props) => {
     page,
     language = undefined,
     genreID = undefined,
+    query = undefined,
   } = props.match.params;
-  if (genreID) {
-    dispatch(searchByGenre(genreID, page));
-  } else if (language) {
-    dispatch(searchByLanguage(language, page));
+  if (genreID && !language && !query) {
+    dispatch(searchByGenre(genreID, parseInt(page)));
+  } else if (language && !genreID && !query) {
+    dispatch(searchByLanguage(language, parseInt(page)));
+  } else if (query && !language && !genreID) {
+    dispatch(searchByQuery(query, parseInt(page)));
   }
-  return <SearchResults />;
+  return (
+    <Fragment>
+      <NavBar />
+      <SearchResults />
+    </Fragment>
+  );
 };
 
 export default Search;

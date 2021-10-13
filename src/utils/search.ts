@@ -23,3 +23,15 @@ export const fetchSearchByGenreMovieList = async (
     }
   );
 };
+
+export const fetchSearchByQueryMovieList = async (
+  query: string,
+  page: string
+) => {
+  return await axios.get(
+    `https://api.themoviedb.org/3/search/movie?api_key=6fdc960c4cb19000df3556ff8e8b5831&query=${query}&page=${page}`,
+    {
+      cancelToken: source.token,
+    }
+  );
+};

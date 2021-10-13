@@ -1,25 +1,28 @@
 import { Container, Pagination } from "@mui/material";
 import { Fragment } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useHistory } from "react-router-dom";
 import { MovieDefaults } from "../../../common/defaults/movie";
 import { Path } from "../../../common/enums/path";
-import { searchByGenre, searchByLanguage } from "../../../state/actions/search";
 
 const SearchResults = () => {
-  const {movieList,page,totalPages,language,genreID} = useSelector((state: any) => state.search);
-  const dispatch = useDispatch();
+  const { movieList, page, totalPages, language, genreID, query } = useSelector(
+    (state: any) => state.search
+  );
+  const history = useHistory();
   const handleChangePage = (
     event: React.ChangeEvent<unknown>,
     value: number
   ) => {
-    if(genreID){
-      dispatch(searchByGenre(genreID, value.toString()));
-    }else if(language){
-      dispatch(searchByLanguage(language, page));
+    if (genreID) {
+      history.push(`${Path.SearchByGenre}${genreID}/page/${value}`);
+    } else if (language) {
+      history.push(`${Path.SearchByLanguage}${language}/page/${value}`);
+    } else if (query) {
+      history.push(`${Path.SearchByQuery}${query}/page/${value}`);
     }
   };
-  
+
   return (
     <Fragment>
       {!!movieList.length ? (
@@ -38,8 +41,8 @@ const SearchResults = () => {
           })}
           <Container maxWidth="sm">
             <Pagination
-              count={totalPages}
-              page={page}
+              count={parseInt(totalPages)}
+              page={parseInt(page)}
               color="primary"
               size="large"
               variant="outlined"

@@ -8,18 +8,21 @@ import {
   OutlinedInput,
   Toolbar,
 } from "@mui/material";
-import { ChangeEvent, FC } from "react";
+import { FC } from "react";
 import { useHistory } from "react-router-dom";
 import { Path } from "../../common/enums/path";
 
 const NavBar: FC<{}> = () => {
   const history = useHistory();
 
-  const handleSearchTerm = (event: ChangeEvent<HTMLInputElement>) => {};
-
   const handleSearchOnClick = () => {};
 
-  const handleSearchKeyDown = (event: any) => {};
+  const handleSearchKeyDown = (event: any) => {
+    const {key} = event.nativeEvent;
+    if(key !== "Enter") return;
+    const {value} = event.target;
+    history.push(`${Path.SearchByQuery}${value}/page/1`)
+  };
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -34,7 +37,6 @@ const NavBar: FC<{}> = () => {
           <div>
             <FormControl variant="outlined">
               <OutlinedInput
-                onChange={handleSearchTerm}
                 onKeyDown={handleSearchKeyDown}
                 placeholder="Search"
                 id="outlined-adornment-weight"
