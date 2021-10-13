@@ -21,6 +21,7 @@ const NavBar: FC<{}> = () => {
     const {key} = event.nativeEvent;
     if(key !== "Enter") return;
     const {value} = event.target;
+    if(!value) return
     history.push(`${Path.SearchByQuery}${value}/page/1`)
   };
 
