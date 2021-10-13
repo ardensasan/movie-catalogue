@@ -1,5 +1,5 @@
 import { HomeSaga } from "../../common/enums/sagas/home";
-import { takeLatest, call, put, fork } from "redux-saga/effects";
+import { takeLatest, call, put, fork } from "@redux-saga/core/effects";
 import { HomeActions } from "../../common/enums/actions/home";
 import { HomeEndpoint } from "../../common/defaults/endpoints/home";
 import { fetchMovieList } from "../../utils/home";

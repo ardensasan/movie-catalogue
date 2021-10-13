@@ -1,4 +1,4 @@
-import { takeLatest, call, put } from "redux-saga/effects";
+import { takeLatest, call, put } from "@redux-saga/core/effects";
 import { MovieActions } from "../../common/enums/actions/movie";
 import { MovieSaga } from "../../common/enums/sagas/movie";
 import { fetchMovieDetails } from "../../utils/movie";

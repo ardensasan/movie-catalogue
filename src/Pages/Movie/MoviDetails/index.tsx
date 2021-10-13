@@ -2,7 +2,7 @@ import { Card, CardMedia, Grid, List, ListItem } from "@mui/material";
 import { Fragment } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { MovieDefaults } from "../../../common/defaults/movie";
+import { Path } from "../../../common/enums/path";
 
 const MovieDetails = () => {
   const movieDetails = useSelector((state: any) => state.movie.movieDetails);
@@ -19,7 +19,7 @@ const MovieDetails = () => {
             <CardMedia
               component="img"
               alt={movieDetails.title}
-              image={`${MovieDefaults.PosterURL}${movieDetails.poster_path}`}
+              image={`https://image.tmdb.org/t/p/original/${movieDetails.poster_path}`}
               title={movieDetails.title}
             />
           </Grid>
@@ -38,10 +38,7 @@ const MovieDetails = () => {
                     return (
                       <Fragment key={index}>
                         &nbsp;&nbsp;
-                        <Link
-                          to={"/"}
-                          key={index}
-                        >
+                        <Link to={`${Path.SearchByGenre}${genre.id}/page/1`} key={index}>
                           {genre.name}
                         </Link>
                       </Fragment>
@@ -58,7 +55,7 @@ const MovieDetails = () => {
                         <Fragment key={index}>
                           &nbsp;&nbsp;
                           <Link
-                            to={`/page/1`}
+                            to={`${Path.SearchByLanguage}${language.iso_639_1}/page/1`}
                             key={index}
                           >
                             {language.english_name}
