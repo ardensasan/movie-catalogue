@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { useDispatch } from "react-redux";
 import NavBar from "../../components/NavBar";
 import {
@@ -6,7 +6,6 @@ import {
   setTopRatedMovieList,
   setUpcomingMovieList,
 } from "../../state/actions/home";
-import { cancelRequest } from "../../utils/home";
 import MovieCarousel from "./MovieCarousel";
 
 const Home = () => {
@@ -15,12 +14,6 @@ const Home = () => {
   dispatch(setTopRatedMovieList());
   dispatch(setUpcomingMovieList());
 
-  useEffect(() => {
-    return () => {
-      cancelRequest();
-    };
-  });
-  
   return (
     <Fragment>
       <NavBar />

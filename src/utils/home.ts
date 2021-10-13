@@ -5,7 +5,3 @@ export const fetchMovieList = async (endpoint: string) => {
     cancelToken: source.token,
   });
 };
-
-export const cancelRequest = ()=>{
-  source.cancel();
-}

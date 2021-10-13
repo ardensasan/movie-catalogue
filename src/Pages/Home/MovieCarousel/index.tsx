@@ -1,8 +1,10 @@
+import { Link } from "@mui/material";
 import { FC, Fragment } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { useSelector } from "react-redux";
 import { MovieDefaults } from "../../../common/defaults/movie";
+import { Path } from "../../../common/enums/path";
 import { Props } from "./types";
 
 const MovieCarousel: FC<Props> = ({ type }) => {
@@ -47,10 +49,12 @@ const MovieCarousel: FC<Props> = ({ type }) => {
         {movieList?.map((movie: any) => {
           return (
             <div key={movie.id}>
+              <Link href={`${Path.Movie}${movie.id}`}>
               <img
                 src={`${MovieDefaults.PosterURL}${movie.poster_path}`}
                 alt={movie.original_title}
               />
+              </Link>
             </div>
           );
         })}
