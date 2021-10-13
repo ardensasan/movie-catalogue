@@ -6,6 +6,7 @@ import { Path } from "../../../common/enums/path";
 
 const MovieDetails = () => {
   const movieDetails = useSelector((state: any) => state.movie.movieDetails);
+  console.log(movieDetails);
   if (!movieDetails) {
     return null;
   }
@@ -38,7 +39,10 @@ const MovieDetails = () => {
                     return (
                       <Fragment key={index}>
                         &nbsp;&nbsp;
-                        <Link to={`${Path.SearchByGenre}${genre.id}/page/1`} key={index}>
+                        <Link
+                          to={`${Path.SearchByGenre}${genre.id}/page/1`}
+                          key={index}
+                        >
                           {genre.name}
                         </Link>
                       </Fragment>
@@ -69,12 +73,14 @@ const MovieDetails = () => {
               {movieDetails.overview && (
                 <ListItem>Overview: {movieDetails.overview}</ListItem>
               )}
-              <iframe
-                title="trailer"
-                width="1280"
-                height="720"
-                src={`https://www.youtube.com/embed/${movieDetails.videos.results[0].key}`}
-              />
+              {!!movieDetails.videos.results.length && (
+                <iframe
+                  title="trailer"
+                  width="1280"
+                  height="720"
+                  src={`https://www.youtube.com/embed/${movieDetails.videos.results[0].key}`}
+                />
+              )}
             </List>
           </Grid>
         </Grid>

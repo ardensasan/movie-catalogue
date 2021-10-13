@@ -1,5 +1,5 @@
 import { Container, Pagination } from "@mui/material";
-import { Fragment, useEffect } from "react";
+import { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { MovieDefaults } from "../../../common/defaults/movie";
@@ -18,8 +18,8 @@ const SearchResults = () => {
     }else if(language){
       dispatch(searchByLanguage(language, page));
     }
-    
   };
+  
   return (
     <Fragment>
       {!!movieList.length ? (
