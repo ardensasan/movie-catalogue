@@ -1,33 +1,26 @@
 {
   "files": {
-    "main.css": "/tshirt-editor/static/css/main.9800b2e3.chunk.css",
-    "main.js": "/tshirt-editor/static/js/main.8d5a9924.chunk.js",
-    "main.js.map": "/tshirt-editor/static/js/main.8d5a9924.chunk.js.map",
-    "runtime-main.js": "/tshirt-editor/static/js/runtime-main.2f54af05.js",
-    "runtime-main.js.map": "/tshirt-editor/static/js/runtime-main.2f54af05.js.map",
-    "static/js/2.ed8f3b84.chunk.js": "/tshirt-editor/static/js/2.ed8f3b84.chunk.js",
-    "static/js/2.ed8f3b84.chunk.js.map": "/tshirt-editor/static/js/2.ed8f3b84.chunk.js.map",
-    "static/js/3.be322178.chunk.js": "/tshirt-editor/static/js/3.be322178.chunk.js",
-    "static/js/3.be322178.chunk.js.map": "/tshirt-editor/static/js/3.be322178.chunk.js.map",
-    "index.html": "/tshirt-editor/index.html",
-    "static/css/main.9800b2e3.chunk.css.map": "/tshirt-editor/static/css/main.9800b2e3.chunk.css.map",
-    "static/js/2.ed8f3b84.chunk.js.LICENSE.txt": "/tshirt-editor/static/js/2.ed8f3b84.chunk.js.LICENSE.txt",
-    "static/media/carpet.4fe521da.jpg": "/tshirt-editor/static/media/carpet.4fe521da.jpg",
-    "static/media/carpet.a8a11c0e.jpg": "/tshirt-editor/static/media/carpet.a8a11c0e.jpg",
-    "static/media/checkered_towel.c99b1a4b.jpg": "/tshirt-editor/static/media/checkered_towel.c99b1a4b.jpg",
-    "static/media/checkered_towel.d0ef6bb7.jpg": "/tshirt-editor/static/media/checkered_towel.d0ef6bb7.jpg",
-    "static/media/leather.2a81cf18.jpg": "/tshirt-editor/static/media/leather.2a81cf18.jpg",
-    "static/media/leather.3cd1efa8.jpg": "/tshirt-editor/static/media/leather.3cd1efa8.jpg",
-    "static/media/model.91f3dcc5.glb": "/tshirt-editor/static/media/model.91f3dcc5.glb",
-    "static/media/tight_knit.7cd984c5.jpg": "/tshirt-editor/static/media/tight_knit.7cd984c5.jpg",
-    "static/media/tight_knit.bdc5c65c.jpg": "/tshirt-editor/static/media/tight_knit.bdc5c65c.jpg",
-    "static/media/towel.6528b49b.jpg": "/tshirt-editor/static/media/towel.6528b49b.jpg",
-    "static/media/towel.cda81628.jpg": "/tshirt-editor/static/media/towel.cda81628.jpg"
+    "main.css": "/movie-catalogue/static/css/main.8c8b27cf.chunk.css",
+    "main.js": "/movie-catalogue/static/js/main.13f051c2.chunk.js",
+    "main.js.map": "/movie-catalogue/static/js/main.13f051c2.chunk.js.map",
+    "runtime-main.js": "/movie-catalogue/static/js/runtime-main.639b8ccb.js",
+    "runtime-main.js.map": "/movie-catalogue/static/js/runtime-main.639b8ccb.js.map",
+    "static/css/2.64354d20.chunk.css": "/movie-catalogue/static/css/2.64354d20.chunk.css",
+    "static/js/2.03cdf312.chunk.js": "/movie-catalogue/static/js/2.03cdf312.chunk.js",
+    "static/js/2.03cdf312.chunk.js.map": "/movie-catalogue/static/js/2.03cdf312.chunk.js.map",
+    "static/js/3.7b54ff3d.chunk.js": "/movie-catalogue/static/js/3.7b54ff3d.chunk.js",
+    "static/js/3.7b54ff3d.chunk.js.map": "/movie-catalogue/static/js/3.7b54ff3d.chunk.js.map",
+    "index.html": "/movie-catalogue/index.html",
+    "static/css/2.64354d20.chunk.css.map": "/movie-catalogue/static/css/2.64354d20.chunk.css.map",
+    "static/css/main.8c8b27cf.chunk.css.map": "/movie-catalogue/static/css/main.8c8b27cf.chunk.css.map",
+    "static/js/2.03cdf312.chunk.js.LICENSE.txt": "/movie-catalogue/static/js/2.03cdf312.chunk.js.LICENSE.txt",
+    "static/media/styles.css": "/movie-catalogue/static/media/revicons.e8746a62.woff"
   },
   "entrypoints": [
-    "static/js/runtime-main.2f54af05.js",
-    "static/js/2.ed8f3b84.chunk.js",
-    "static/css/main.9800b2e3.chunk.css",
-    "static/js/main.8d5a9924.chunk.js"
+    "static/js/runtime-main.639b8ccb.js",
+    "static/css/2.64354d20.chunk.css",
+    "static/js/2.03cdf312.chunk.js",
+    "static/css/main.8c8b27cf.chunk.css",
+    "static/js/main.13f051c2.chunk.js"
   ]
 }
