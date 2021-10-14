@@ -1,7 +1,19 @@
-import { HomeSaga } from "../../common/enums/sagas/home"
+import { HomeSaga } from "../../common/enums/sagas/home";
 
-export const setLatestMovieList = () => {
-    return {
-        type: HomeSaga.SetPopularMovieListSaga
-    }
-}
+export const setPopularMovieList = () => {
+  return {
+    type: HomeSaga.SetPopularMovieListSaga,
+  };
+};
+
+export const setTopRatedMovieList = () => {
+  return {
+    type: HomeSaga.SetTopRatedMovieListSaga,
+  };
+};
+
+export const setUpcomingMovieList = () => {
+  return {
+    type: HomeSaga.SetUpcomingMovieListSaga,
+  };
+};
