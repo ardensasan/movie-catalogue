@@ -32,7 +32,7 @@ const NavBar: FC<{}> = () => {
           <IconButton color="inherit" onClick={() => history.push(Path.Home)}>
             <Home />
           </IconButton>
-          <IconButton color="inherit" onClick={() => history.push(Path.Movies)}>
+          <IconButton color="inherit" onClick={() => history.push(`${Path.Movies}page/1`)}>
             <LocalMovies />
           </IconButton>
           <div>

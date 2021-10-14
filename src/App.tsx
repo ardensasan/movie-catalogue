@@ -47,7 +47,7 @@ const App = () => {
               component={Search}
             />
             <Route exact path={[Path.Home, Path.Root]} component={Home} />
-            <Route exact path={Path.Movies} component={Movies} />
+            <Route exact path={`${Path.Movies}page/:page`} component={Movies} />
             <Route exact path={`${Path.Movie}:id`} component={Movie} />
           </Switch>
         </BrowserRouter>

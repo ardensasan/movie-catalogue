@@ -5,8 +5,8 @@ import { fetchMovieList } from "../../utils/movies";
 //worker functions
 function* getMovieList({ page }: any): any {
   const response = yield call(fetchMovieList, page);
-  const { results: movieList } = response.data;
-  yield put({ type: MoviesActions.SetMovieList, movieList });
+  const { results: movieList,total_results } = response.data;
+  yield put({ type: MoviesActions.SetMovieList, movieList,totalPage: Math.ceil(total_results/20), page: parseInt(page) });
 }
 
 //watcher function
