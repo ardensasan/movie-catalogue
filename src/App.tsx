@@ -46,9 +46,9 @@ const App = () => {
               path={`${Path.SearchByQuery}:query/page/:page`}
               component={Search}
             />
-            <Route exact path={[Path.Home, Path.Root]} component={Home} />
             <Route exact path={`${Path.Movies}page/:page`} component={Movies} />
             <Route exact path={`${Path.Movie}:id`} component={Movie} />
+            <Route path={[Path.Root,Path.Home]} component={Home} />
           </Switch>
         </BrowserRouter>
       </div>
