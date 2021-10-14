@@ -18,11 +18,11 @@ const Search: FC<Props> = (props: Props) => {
     query = undefined,
   } = props.match.params;
   if (genreID && !language && !query) {
-    dispatch(searchByGenre(genreID, parseInt(page)));
+    dispatch(searchByGenre(genreID, page));
   } else if (language && !genreID && !query) {
-    dispatch(searchByLanguage(language, parseInt(page)));
+    dispatch(searchByLanguage(language, page));
   } else if (query && !language && !genreID) {
-    dispatch(searchByQuery(query, parseInt(page)));
+    dispatch(searchByQuery(query, page));
   }
   return (
     <Fragment>
