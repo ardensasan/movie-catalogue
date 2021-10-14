@@ -6,6 +6,10 @@ import { Path } from "../../../common/enums/path";
 
 const MovieDetails = () => {
   const movieDetails = useSelector((state: any) => state.movie.movieDetails);
+  const error = useSelector((state:any)=> state.movie.error);
+  if(error){
+    return <h1>{error.message}</h1>
+  }
   if (!movieDetails) {
     return null;
   }

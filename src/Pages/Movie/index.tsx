@@ -2,7 +2,7 @@ import { FC, Fragment } from "react";
 import { useDispatch } from "react-redux";
 import NavBar from "../../components/NavBar";
 import { setMovieDetails } from "../../state/actions/movie";
-import MovieDetails from "./MoviDetails";
+import MovieDetails from "./MovieDetails";
 import { Props } from "./types";
 
 const Movie: FC<Props> = (props: Props) => {
@@ -11,7 +11,7 @@ const Movie: FC<Props> = (props: Props) => {
   return (
     <Fragment>
       <NavBar />
-      <MovieDetails />
+      <MovieDetails/>
     </Fragment>
   );
 };

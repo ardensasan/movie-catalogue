@@ -5,11 +5,12 @@ const INITIAL_STATE = {
 };
 
 const movieReducer = (state = INITIAL_STATE, action: any) => {
-  const { type } = action;
+  const { type, ...rest } = action;
   switch (type) {
     case MovieActions.SetMovieDetails:
-      const { movieDetails } = action;
-      return { ...state, movieDetails };
+      return { ...state, ...rest };
+    case MovieActions.SetMovieDetailsFailed:
+      return { ...state, ...rest };
     default:
       return state;
   }

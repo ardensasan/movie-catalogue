@@ -9,7 +9,7 @@ const MovieList = () => {
   const { movieList, page, totalPage } = useSelector(
     (state: any) => state.movies
   );
-
+  const error = useSelector((state: any) => state.movie.error);
   const history = useHistory();
   const handleChangePage = (
     event: React.ChangeEvent<unknown>,
@@ -17,7 +17,9 @@ const MovieList = () => {
   ) => {
     history.push(`${Path.Movies}page/${page}`);
   };
-
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
   return (
     <Fragment>
       {!!movieList.length ? (

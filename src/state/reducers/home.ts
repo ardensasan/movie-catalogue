@@ -7,17 +7,16 @@ const INITIAL_STATE = {
 };
 
 const homeReducer = (state = INITIAL_STATE, action: any) => {
-  const { type } = action;
+  const { type, ...rest } = action;
   switch (type) {
     case HomeActions.SetPopularMovieList:
-      const { popularMovieList } = action;
-      return { ...state, popularMovieList };
+      return { ...state, ...rest };
     case HomeActions.SetTopRatedMovieList:
-      const { topRatedMovieList } = action;
-      return { ...state, topRatedMovieList };
+      return { ...state, ...rest };
     case HomeActions.SetUpcomingMovieList:
-      const { upcomingMovieList } = action;
-      return { ...state, upcomingMovieList };
+      return { ...state, ...rest };
+    case HomeActions.SetMovieListFailed:
+      return { ...state, ...rest };
     default:
       return state;
   }

@@ -19,7 +19,8 @@ const MovieCarousel: FC<Props> = ({ type }) => {
       return [];
     }
   });
-
+  
+  const error = useSelector((state:any)=>state.home.error)
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
@@ -37,6 +38,10 @@ const MovieCarousel: FC<Props> = ({ type }) => {
       slidesToSlide: 1, // optional, default to 1.
     },
   };
+
+  if (error) {
+    return <h1>{error.message}</h1>;
+  }
   return (
     <Fragment>
       <h1>{type}</h1>
@@ -50,10 +55,10 @@ const MovieCarousel: FC<Props> = ({ type }) => {
           return (
             <div key={movie.id}>
               <Link href={`${Path.Movie}${movie.id}`}>
-              <img
-                src={`${MovieDefaults.PosterURL}${movie.poster_path}`}
-                alt={movie.original_title}
-              />
+                <img
+                  src={`${MovieDefaults.PosterURL}${movie.poster_path}`}
+                  alt={movie.original_title}
+                />
               </Link>
             </div>
           );

@@ -3,10 +3,11 @@ import { SearchActions } from "../../common/enums/actions/search";
 const INITIAL_STATE = {
   language: undefined,
   genreID: undefined,
-  query:undefined,
+  query: undefined,
   page: 1,
   movieList: [],
   totalPages: 1,
+  error: undefined,
 };
 const searchReducer = (state = INITIAL_STATE, action: any) => {
   const { type, ...rest } = action;
@@ -27,6 +28,9 @@ const searchReducer = (state = INITIAL_STATE, action: any) => {
       };
     case SearchActions.SearchByQuery:
       return { ...state, ...rest, language: undefined, genreID: undefined };
+
+    case SearchActions.SearchMoviesFailed:
+      return { ...state, ...rest };
     default:
       return state;
   }

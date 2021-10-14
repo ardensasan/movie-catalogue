@@ -4,9 +4,13 @@ import { MovieSaga } from "../../common/enums/sagas/movie";
 import { fetchMovieDetails } from "../../utils/movie";
 //worker functions
 function* getMovieDetails({ movieID }: any): any {
-  const response = yield call(fetchMovieDetails, movieID);
-  const {data:movieDetails} = response;
-  yield put({ type: MovieActions.SetMovieDetails, movieDetails });
+  try {
+    const response = yield call(fetchMovieDetails, movieID);
+    const { data: movieDetails } = response;
+    yield put({ type: MovieActions.SetMovieDetails, movieDetails });
+  } catch (error) {
+    yield put({ type: MovieActions.SetMovieDetailsFailed, error });
+  }
 }
 
 //watcher function
