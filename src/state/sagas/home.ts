@@ -1,5 +1,5 @@
 import { HomeSaga } from "../../common/enums/sagas/home";
-import { takeLatest, call, put, fork } from "@redux-saga/core/effects";
+import { takeLatest, call, put, spawn } from "@redux-saga/core/effects";
 import { HomeActions } from "../../common/enums/actions/home";
 import { HomeEndpoint } from "../../common/defaults/endpoints/home";
 import { fetchMovieList } from "../../utils/home";
@@ -55,8 +55,8 @@ function* watchSetPopularMovieListSaga() {
   yield takeLatest(HomeSaga.SetPopularMovieListSaga, getPopularMovieList);
 }
 
-export default function* rootSaga() {
-  yield fork(watchSetTopRatedMovieListSaga);
-  yield fork(watchSetPopularMovieListSaga);
-  yield fork(watchUpcomingMovieListSaga);
+export default function* homeRootSaga() {
+  yield spawn(watchSetTopRatedMovieListSaga);
+  yield spawn(watchSetPopularMovieListSaga);
+  yield spawn(watchUpcomingMovieListSaga);
 }

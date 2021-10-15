@@ -7,25 +7,13 @@ import Home from "./Pages/Home";
 import Movies from "./Pages/Movies";
 import Movie from "./Pages/Movie";
 import createSagaMiddleware from "@redux-saga/core";
-import rootSaga from "./state/sagas/home";
+import rootSaga from "./state/sagas";
 import { Path } from "./common/enums/path";
-import { watchSetMovieListSaga } from "./state/sagas/movies";
-import { watchSetMovieDetailsSaga } from "./state/sagas/movie";
 import Search from "./Pages/Search";
-import {
-  watchSearchByLanguageSaga,
-  watchSearchByGenreSaga,
-  watchSearchByQuerySaga,
-} from "./state/sagas/search";
 const App = () => {
   const sagaMiddleware = createSagaMiddleware();
   const store = createStore(reducer, applyMiddleware(sagaMiddleware));
   sagaMiddleware.run(rootSaga);
-  sagaMiddleware.run(watchSetMovieListSaga);
-  sagaMiddleware.run(watchSetMovieDetailsSaga);
-  sagaMiddleware.run(watchSearchByLanguageSaga);
-  sagaMiddleware.run(watchSearchByGenreSaga);
-  sagaMiddleware.run(watchSearchByQuerySaga)
   return (
     <Provider store={store}>
       <div className="App">

@@ -13,7 +13,6 @@ const Home = () => {
   dispatch(setPopularMovieList());
   dispatch(setTopRatedMovieList());
   dispatch(setUpcomingMovieList());
-
   return (
     <Fragment>
       <NavBar />

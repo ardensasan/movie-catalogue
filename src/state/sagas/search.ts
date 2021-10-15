@@ -1,4 +1,4 @@
-import { call, put, takeLatest } from "@redux-saga/core/effects";
+import { call, put, takeLatest,spawn } from "@redux-saga/core/effects";
 import { SearchActions } from "../../common/enums/actions/search";
 import { SearchSaga } from "../../common/enums/sagas/search";
 import {
@@ -15,7 +15,7 @@ function* getSearchByLanguageResults({ language, page }: any): any {
       type: SearchActions.SearchByLanguage,
       movieList,
       page: parseInt(page),
-      language,
+      language, 
       totalPages: Math.ceil(total_results / 20),
       error: undefined,
     });
@@ -58,14 +58,20 @@ function* getSearchByQuery({ query, page }: any): any {
   }
 }
 
-export function* watchSearchByQuerySaga() {
+function* watchSearchByQuerySaga() {
   yield takeLatest(SearchSaga.SearchByQuerySaga, getSearchByQuery);
 }
 
-export function* watchSearchByLanguageSaga() {
+function* watchSearchByLanguageSaga() {
   yield takeLatest(SearchSaga.SearchByLanguageSaga, getSearchByLanguageResults);
 }
 
-export function* watchSearchByGenreSaga() {
+function* watchSearchByGenreSaga() {
   yield takeLatest(SearchSaga.SearchByGenreSaga, getSearchByGenreResults);
+}
+
+export default function* searchRootSaga() {
+  yield spawn(watchSearchByGenreSaga);
+  yield spawn(watchSearchByLanguageSaga);
+  yield spawn(watchSearchByQuerySaga);
 }
