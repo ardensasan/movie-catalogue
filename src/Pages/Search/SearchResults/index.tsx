@@ -4,10 +4,11 @@ import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { MovieDefaults } from "../../../common/defaults/movie";
 import { Path } from "../../../common/enums/path";
+import { SearchState } from "./types";
 
 const SearchResults = () => {
   const { movieList, page, totalPages, language, genreID, query } = useSelector(
-    (state: any) => state.search
+    (state: SearchState) => state.search
   );
   const history = useHistory();
   const handleChangePage = (
@@ -41,8 +42,8 @@ const SearchResults = () => {
           })}
           <Container maxWidth="sm">
             <Pagination
-              count={parseInt(totalPages)}
-              page={parseInt(page)}
+              count={totalPages}
+              page={page}
               color="primary"
               size="large"
               variant="outlined"

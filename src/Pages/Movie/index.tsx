@@ -11,7 +11,7 @@ const Movie: FC<Props> = (props: Props) => {
   return (
     <Fragment>
       <NavBar />
-      <MovieDetails/>
+      <MovieDetails />
     </Fragment>
   );
 };

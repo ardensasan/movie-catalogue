@@ -1,7 +1,9 @@
 import { MovieActions } from "../../common/enums/actions/movie";
+import { MovieReducer } from "./types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE:MovieReducer = {
   movieDetails: undefined,
+  error:undefined
 };
 
 const movieReducer = (state = INITIAL_STATE, action: any) => {

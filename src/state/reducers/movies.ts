@@ -1,8 +1,10 @@
 import { MoviesActions } from "../../common/enums/actions/movies";
-const INITIAL_STATE = {
+import { MoviesReducer } from "./types";
+const INITIAL_STATE:MoviesReducer = {
   movieList: [],
   page: 1,
   totalPage: 1,
+  error:undefined
 };
 const moviesReducer = (state = INITIAL_STATE, action: any) => {
   const { type, ...rest } = action;

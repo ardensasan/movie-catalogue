@@ -4,12 +4,12 @@ import { useSelector } from "react-redux";
 import { Link, useHistory } from "react-router-dom";
 import { MovieDefaults } from "../../common/defaults/movie";
 import { Path } from "../../common/enums/path";
+import { MoviesState } from "./types";
 
 const MovieList = () => {
-  const { movieList, page, totalPage } = useSelector(
-    (state: any) => state.movies
+  const { movieList, page, totalPage, error } = useSelector(
+    (state: MoviesState) => state.movies
   );
-  const error = useSelector((state: any) => state.movie.error);
   const history = useHistory();
   const handleChangePage = (
     event: React.ChangeEvent<unknown>,

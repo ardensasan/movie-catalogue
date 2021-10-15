@@ -1,14 +1,24 @@
 import { Card, CardMedia, Grid, List, ListItem } from "@mui/material";
-import { Fragment } from "react";
-import { useSelector } from "react-redux";
+import { Fragment, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Path } from "../../../common/enums/path";
+import { resetMovieDetails } from "../../../state/actions/movie";
+import { MovieState } from "./types";
 
 const MovieDetails = () => {
-  const movieDetails = useSelector((state: any) => state.movie.movieDetails);
-  const error = useSelector((state:any)=> state.movie.error);
-  if(error){
-    return <h1>{error.message}</h1>
+  const { movieDetails, error } = useSelector(
+    (state: MovieState) => state.movie
+  );
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    return () => {
+      dispatch(resetMovieDetails())
+    };
+  },[dispatch]);
+  if (error) {
+    return <h1>{error.message}</h1>;
   }
   if (!movieDetails) {
     return null;

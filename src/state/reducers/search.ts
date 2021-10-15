@@ -1,6 +1,7 @@
 import { SearchActions } from "../../common/enums/actions/search";
+import { SearchReducer } from "./types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE: SearchReducer = {
   language: undefined,
   genreID: undefined,
   query: undefined,

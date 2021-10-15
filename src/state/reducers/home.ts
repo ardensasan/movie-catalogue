@@ -1,9 +1,11 @@
 import { HomeActions } from "../../common/enums/actions/home";
+import { HomeReducer } from "./types";
 
-const INITIAL_STATE = {
+const INITIAL_STATE:HomeReducer = {
   popularMovieList: [],
   topRatedMovieList: [],
   upcomingMovieList: [],
+  error:undefined
 };
 
 const homeReducer = (state = INITIAL_STATE, action: any) => {

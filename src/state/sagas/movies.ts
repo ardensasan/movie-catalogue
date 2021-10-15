@@ -1,4 +1,4 @@
-import { takeLatest, call, put,fork } from "@redux-saga/core/effects";
+import { takeLatest, call, put,spawn } from "@redux-saga/core/effects";
 import { MoviesActions } from "../../common/enums/actions/movies";
 import { MoviesSaga } from "../../common/enums/sagas/movies";
 import { fetchMovieList } from "../../utils/movies";
@@ -24,5 +24,5 @@ function* watchSetMovieListSaga() {
 }
 
 export default function* moviesRootSaga() {
-  yield fork(watchSetMovieListSaga);
+  yield spawn(watchSetMovieListSaga);
 }

@@ -5,10 +5,10 @@ import "react-multi-carousel/lib/styles.css";
 import { useSelector } from "react-redux";
 import { MovieDefaults } from "../../../common/defaults/movie";
 import { Path } from "../../../common/enums/path";
-import { Props } from "./types";
+import { HomeState, Props } from "./types";
 
 const MovieCarousel: FC<Props> = ({ type }) => {
-  const movieList = useSelector((state: any) => {
+  const movieList = useSelector((state: HomeState) => {
     if (type === "Popular") {
       return state.home.popularMovieList;
     } else if (type === "Top Rated") {
@@ -20,7 +20,7 @@ const MovieCarousel: FC<Props> = ({ type }) => {
     }
   });
   
-  const error = useSelector((state:any)=>state.home.error)
+  const error = useSelector((state:HomeState)=>state.home.error)
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
