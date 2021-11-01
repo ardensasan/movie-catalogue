@@ -36,7 +36,7 @@ const App = () => {
             />
             <Route exact path={`${Path.Movies}page/:page`} component={Movies} />
             <Route exact path={`${Path.Movie}:id`} component={Movie} />
-            <Route path={[Path.Root,Path.Home]} component={Home} />
+            <Route path={[Path.HomePage,Path.Root,Path.Home]} component={Home} />
           </Switch>
         </BrowserRouter>
       </div>

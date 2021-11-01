@@ -44,7 +44,7 @@ const MovieCarousel: FC<Props> = ({ type }) => {
   }
   return (
     <Fragment>
-      <h1>{type}</h1>
+      <h1>{!!movieList.length && type}</h1>
       <Carousel
         responsive={responsive}
         showDots={true}

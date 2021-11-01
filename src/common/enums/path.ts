@@ -1,9 +1,10 @@
 export enum Path{
-    Home = "/home",
-    Root ="/",
-    Movies ="/movies/",
-    Movie = "/movie/",
-    SearchByGenre = "/search/genre/",
-    SearchByLanguage = "/search/language/",
-    SearchByQuery = "/search/query/"
+    Home = "movie-catalogue/home",
+    HomePage = "movie-catalogue/",
+    Root ="movie-catalogue/",
+    Movies ="movie-catalogue/movies/",
+    Movie = "movie-catalogue/movie/",
+    SearchByGenre = "movie-catalogue/search/genre/",
+    SearchByLanguage = "/movie-cataloguesearch/language/",
+    SearchByQuery = "movie-catalogue/search/query/"
 }
