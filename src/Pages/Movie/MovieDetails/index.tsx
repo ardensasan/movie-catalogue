@@ -53,7 +53,7 @@ const MovieDetails = () => {
                       <Fragment key={index}>
                         &nbsp;&nbsp;
                         <Link
-                          to={`${Path.SearchByGenre}${genre.id}/page/1`}
+                          to={`${Path.SearchByGenre}${genre.id}/page/1/#/`}
                           key={index}
                         >
                           {genre.name}
@@ -72,7 +72,7 @@ const MovieDetails = () => {
                         <Fragment key={index}>
                           &nbsp;&nbsp;
                           <Link
-                            to={`${Path.SearchByLanguage}${language.iso_639_1}/page/1`}
+                            to={`${Path.SearchByLanguage}${language.iso_639_1}/page/1/#/`}
                             key={index}
                           >
                             {language.english_name}

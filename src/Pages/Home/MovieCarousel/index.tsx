@@ -54,7 +54,7 @@ const MovieCarousel: FC<Props> = ({ type }) => {
         {movieList?.map((movie: any) => {
           return (
             <div key={movie.id}>
-              <Link href={`${Path.Movie}${movie.id}`}>
+              <Link href={`${Path.Movie}${movie.id}/#`}>
                 <img
                   src={`${MovieDefaults.PosterURL}${movie.poster_path}`}
                   alt={movie.original_title}

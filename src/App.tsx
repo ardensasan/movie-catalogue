@@ -1,7 +1,7 @@
 import { Provider } from "react-redux";
 import reducer from "./state/reducers";
 import { createStore, applyMiddleware } from "redux";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import "./App.css";
 import Home from "./Pages/Home";
 import Movies from "./Pages/Movies";
@@ -21,7 +21,7 @@ const App = () => {
           <Switch>
             <Route
               exact
-              path={`${Path.SearchByGenre}:genreID/page/:page`}
+              path={`${Path.SearchByGenre}:genreID/page/:page/`}
               component={Search}
             />
             <Route
@@ -31,12 +31,12 @@ const App = () => {
             />
             <Route
               exact
-              path={`${Path.SearchByQuery}:query/page/:page`}
+              path={`${Path.SearchByQuery}:query/page/:page/`}
               component={Search}
             />
-            <Route exact path={`${Path.Movies}page/:page`} component={Movies} />
+            <Route exact path={`${Path.Movies}page/:page/`} component={Movies} />
             <Route exact path={`${Path.Movie}:id`} component={Movie} />
-            <Route path={[Path.HomePage,Path.Root,Path.Home]} component={Home} />
+            <Route path={[Path.Root,Path.Home]} component={Home} />
           </Switch>
         </BrowserRouter>
       </div>

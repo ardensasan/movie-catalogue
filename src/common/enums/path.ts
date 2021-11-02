@@ -1,6 +1,6 @@
 export enum Path{
     Home = "/movie-catalogue/home",
-    HomePage = "/movie-catalogue/",
+    PageRoot ="/movie-catalogue/",
     Root ="/",
     Movies ="/movie-catalogue/movies/",
     Movie = "/movie-catalogue/movie/",

@@ -16,11 +16,11 @@ const SearchResults = () => {
     value: number
   ) => {
     if (genreID) {
-      history.push(`${Path.SearchByGenre}${genreID}/page/${value}`);
+      history.push(`${Path.SearchByGenre}${genreID}/page/${value}/#`);
     } else if (language) {
-      history.push(`${Path.SearchByLanguage}${language}/page/${value}`);
+      history.push(`${Path.SearchByLanguage}${language}/page/${value}/#`);
     } else if (query) {
-      history.push(`${Path.SearchByQuery}${query}/page/${value}`);
+      history.push(`${Path.SearchByQuery}${query}/page/${value}/#`);
     }
   };
 
