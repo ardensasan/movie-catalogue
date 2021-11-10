@@ -4,7 +4,7 @@ export enum Path{
     Root ="/",
     Movies ="/movies/",
     Movie = "/movie/",
-    SearchByGenre = "search/genre/",
+    SearchByGenre = "/search/genre/",
     SearchByLanguage = "/search/language/",
     SearchByQuery = "/search/query/"
 }

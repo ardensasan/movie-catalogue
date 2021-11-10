@@ -26,6 +26,7 @@ const SearchResults = () => {
 
   return (
     <Fragment>
+      {!language && language}
       {!!movieList.length ? (
         <Fragment>
           {movieList.map((movie: any) => {
