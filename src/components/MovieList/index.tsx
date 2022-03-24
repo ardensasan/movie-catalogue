@@ -15,7 +15,7 @@ const MovieList = () => {
     event: React.ChangeEvent<unknown>,
     page: number
   ) => {
-    history.push(`${Path.Movies}page/${page}/#`);
+    history.push(`${Path.Movies}page/${page}`);
   };
   if (error) {
     return <h1>{error.message}</h1>;
@@ -26,9 +26,9 @@ const MovieList = () => {
         <Fragment>
           {movieList.map((movie: any) => {
             return (
-              <Link to={`${Path.Movie}${movie.id}/#`} key={movie.id}>
+              <Link to={`${Path.Movie}${movie.id}`} key={movie.id}>
                 <img
-                  src={`${MovieDefaults.PosterURL}${movie.poster_path}/#`}
+                  src={`${MovieDefaults.PosterURL}${movie.poster_path}`}
                   alt={movie.original_title}
                   width={window.innerWidth / 6}
                   height={(window.innerWidth / 6) * 1.5}
